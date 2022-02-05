@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Board from './ticTacToe/ticTacToeGame.jsx'
+import MathGame from './math/mathGame.jsx'
 
 class Game extends Component {
   render() {
     return (
       <div className="game">
-        <div className="game-board">
+        <div className="container">
           <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
+          <br/>
+          <br/>
+          <hr/>
+          <MathGame/>
         </div>
       </div>
     );
