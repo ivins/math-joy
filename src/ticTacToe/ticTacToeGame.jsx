@@ -8,6 +8,12 @@ function Square(props) {
   );
 }
 
+function ResetButton(props) {
+  return (
+    <button type="button" className="btn btn-secondary" onClick={props.onClick}>Restart Game</button>
+  );
+}
+
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +44,13 @@ class Board extends Component {
     );
   }
 
+  resetGame = () => {
+    this.setState({
+      squares: Array(9).fill(null),
+      xIsNext: true,
+    });
+  }
+
   render() {
     const winner = calculateWinner(this.state.squares);
     let status;
@@ -65,6 +78,8 @@ class Board extends Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <hr/>
+        <ResetButton onClick={this.resetGame}></ResetButton>
       </div>
     );
   }
